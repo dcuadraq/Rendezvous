@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-8.col-md-offset-2.col-xs-10.col-xs-offset-1.well
+      .event
+        .event-title
+          %h3.text-center
+            = @event.name
+          %hr
+        .event-description
+          %p
+            = @event.description

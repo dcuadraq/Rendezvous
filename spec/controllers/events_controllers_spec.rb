@@ -12,6 +12,19 @@ describe EventsController, 'GET#index' do
   end
 end
 
+describe EventsController, 'GET#show' do
+  let(:event) { create(:event) }
+  before { get :show, id: event.id }
+
+  it 'retrives the event' do
+    expect(assigns(:event)).to eq(event)
+  end
+
+  it 'render show template' do
+    expect(response).to render_template(:show)
+  end
+end
+
 describe EventsController, 'GET#new' do
   before { get :new }
 
