@@ -4,7 +4,7 @@ class CreateAssistant < ActiveRecord::Migration
       t.string :name, null: false
       t.string :time_zone, default: "UTC"
       t.string :email, null: false
-      t.references :event, null: false
+      t.references :event, null: false, index: true
       t.timestamps null: false
     end
   end
