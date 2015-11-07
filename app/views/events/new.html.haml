@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      = bootstrap_form_for(@event, html: { class: 'well'} ) do |f|
+        %legend.text-center
+          Create Event
+        = f.text_field :name, hide_label: true, placeholder: 'Add a short, clear name'
+        = f.text_area :descripion, hide_label: true, placeholder: 'Tell people more about the event', rows: 5
+        = f.text_field :duration, hide_label: true, placeholder: 'Include a time estimation'
+        = f.password_field :password, hide_label: true, placeholder: 'Add a secret password'
+        = f.password_field :password_confirmation, hide_label: true, placeholder: 'Confirm the secret password'
+
+        %button.btn.btn-primary{:type => "submit"}
+          %span.glyphicon.glyphicon-calendar
+          Create Event
