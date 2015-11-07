@@ -3,5 +3,6 @@ class Event < ActiveRecord::Base
   has_many :assistants
 
   validates :name, presence: true
-  validates_associated :time_range
+  validates :password, confirmation: true, presence: true
+  validates :password_confirmation, presence: true
 end
