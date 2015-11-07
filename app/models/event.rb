@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
   has_many :assistants
 
   validates :name, presence: true
+  validates :password, confirmation: true, presence: true
+  validates :password_confirmation, presence: true
 
   def earliest_possible_assistant
     earliest_time = nil
