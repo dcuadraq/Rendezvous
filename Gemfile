@@ -9,9 +9,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
+gem 'bootstrap_form'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'faker'
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'pry-byebug'
@@ -21,6 +27,11 @@ end
 group :development do
   gem 'rubocop'
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :production do
