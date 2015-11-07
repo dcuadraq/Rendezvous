@@ -21,6 +21,6 @@ class Event < ActiveRecord::Base
   end
 
   def initial_times_for_assistants
-    assistants.map(&:initial_times)
+    assistants.map(&:initial_times).uniq
   end
 end
