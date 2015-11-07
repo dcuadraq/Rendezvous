@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
     assistants.each do |assistant|
       earliest_time = assistant.earliest_availability if assistant.earliest_availability < earliest_time
     end
+    earliest_time
   end
 
   def latest_possible_assistant
@@ -16,6 +17,7 @@ class Event < ActiveRecord::Base
     assistants.each do |assistant|
       latest_time = assistant.latest_availability if assistant.latest_availability < latest_time
     end
+    latest_time
   end
 
   def initial_times_for_assistants
