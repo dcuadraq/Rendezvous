@@ -1,0 +1,9 @@
+.container
+  - @events.each do |event|
+    .row
+      .col-md-8.col-md-offset-2
+        .panel.panel-default
+          .panel-body
+            %h3.text-center
+              = event.name
+          .panel-footer
