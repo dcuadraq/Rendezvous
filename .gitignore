@@ -36,3 +36,7 @@ bower.json
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore LibreOffice Calc
+*.ods
+*.ods#
