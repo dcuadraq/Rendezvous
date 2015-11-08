@@ -6,23 +6,15 @@ class Event < ActiveRecord::Base
   validates :password, confirmation: true, presence: true
   validates :password_confirmation, presence: true
 
-  def earliest_possible_assistant
-    earliest_time = nil
-    assistants.each do |assistant|
-      earliest_time = assistant.earliest_availability if assistant.earliest_availability < earliest_time
-    end
-    earliest_time
-  end
-
-  def latest_possible_assistant
-    latest_time = nil
-    assistants.each do |assistant|
-      latest_time = assistant.latest_availability if assistant.latest_availability < latest_time
-    end
-    latest_time
-  end
-
   def initial_times_for_assistants
     assistants.map(&:initial_times).uniq
+  end
+
+  def assistants_time_ranges
+    assistants_time_ranges = []
+    assistants.each do |assistant|
+      assistants_time_ranges.concat assistant.time_ranges
+    end
+    assistants_time_ranges
   end
 end
